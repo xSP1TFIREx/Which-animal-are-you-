@@ -13,6 +13,7 @@
 		68D48790291A682A00E8810F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D4878E291A682A00E8810F /* Main.storyboard */; };
 		68D48792291A682B00E8810F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D48791291A682B00E8810F /* Assets.xcassets */; };
 		68D48795291A682B00E8810F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D48793291A682B00E8810F /* LaunchScreen.storyboard */; };
+		68D4879D291A745600E8810F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D4879C291A745600E8810F /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		68D48791291A682B00E8810F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68D48794291A682B00E8810F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68D48796291A682B00E8810F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68D4879C291A745600E8810F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		68D48787291A682A00E8810F /* Which animal are you? */ = {
 			isa = PBXGroup;
 			children = (
-				68D48788291A682A00E8810F /* AppDelegate.swift */,
-				68D4878A291A682A00E8810F /* SceneDelegate.swift */,
-				68D4878C291A682A00E8810F /* ViewController.swift */,
-				68D4878E291A682A00E8810F /* Main.storyboard */,
-				68D48791291A682B00E8810F /* Assets.xcassets */,
-				68D48793291A682B00E8810F /* LaunchScreen.storyboard */,
-				68D48796291A682B00E8810F /* Info.plist */,
+				68D4879E291A74CD00E8810F /* App */,
+				68D4879F291A74FE00E8810F /* ViewControllers */,
+				68D487A0291A754000E8810F /* Storyboards */,
+				68D487A2291A757600E8810F /* Resources */,
+				68D487A1291A756200E8810F /* Models */,
 			);
 			path = "Which animal are you?";
+			sourceTree = "<group>";
+		};
+		68D4879E291A74CD00E8810F /* App */ = {
+			isa = PBXGroup;
+			children = (
+				68D48788291A682A00E8810F /* AppDelegate.swift */,
+				68D4878A291A682A00E8810F /* SceneDelegate.swift */,
+				68D48796291A682B00E8810F /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		68D4879F291A74FE00E8810F /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				68D4878C291A682A00E8810F /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		68D487A0291A754000E8810F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				68D4878E291A682A00E8810F /* Main.storyboard */,
+				68D48793291A682B00E8810F /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		68D487A1291A756200E8810F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				68D4879C291A745600E8810F /* Question.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		68D487A2291A757600E8810F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				68D48791291A682B00E8810F /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +182,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68D4878D291A682A00E8810F /* ViewController.swift in Sources */,
+				68D4879D291A745600E8810F /* Question.swift in Sources */,
 				68D48789291A682A00E8810F /* AppDelegate.swift in Sources */,
 				68D4878B291A682A00E8810F /* SceneDelegate.swift in Sources */,
 			);
@@ -293,8 +337,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +346,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Dtkach.Which-animal-are-you-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -321,8 +368,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +377,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Dtkach.Which-animal-are-you-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
