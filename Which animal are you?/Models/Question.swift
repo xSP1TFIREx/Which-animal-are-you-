@@ -1,4 +1,3 @@
-
 //
 struct Question {
     let title: String

@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		68D48789291A682A00E8810F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D48788291A682A00E8810F /* AppDelegate.swift */; };
 		68D4878B291A682A00E8810F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D4878A291A682A00E8810F /* SceneDelegate.swift */; };
-		68D4878D291A682A00E8810F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D4878C291A682A00E8810F /* ViewController.swift */; };
+		68D4878D291A682A00E8810F /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D4878C291A682A00E8810F /* QuestionsViewController.swift */; };
 		68D48790291A682A00E8810F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D4878E291A682A00E8810F /* Main.storyboard */; };
 		68D48792291A682B00E8810F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D48791291A682B00E8810F /* Assets.xcassets */; };
 		68D48795291A682B00E8810F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D48793291A682B00E8810F /* LaunchScreen.storyboard */; };
 		68D4879D291A745600E8810F /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D4879C291A745600E8810F /* Question.swift */; };
+		68D487B3291E81C300E8810F /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D487B2291E81C300E8810F /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		68D48785291A682A00E8810F /* Which animal are you?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Which animal are you?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D48788291A682A00E8810F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D4878A291A682A00E8810F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		68D4878C291A682A00E8810F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		68D4878C291A682A00E8810F /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		68D4878F291A682A00E8810F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68D48791291A682B00E8810F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68D48794291A682B00E8810F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		68D48796291A682B00E8810F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D4879C291A745600E8810F /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		68D487B2291E81C300E8810F /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,8 @@
 		68D4879F291A74FE00E8810F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				68D4878C291A682A00E8810F /* ViewController.swift */,
+				68D4878C291A682A00E8810F /* QuestionsViewController.swift */,
+				68D487B2291E81C300E8810F /* ResultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -181,7 +184,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68D4878D291A682A00E8810F /* ViewController.swift in Sources */,
+				68D487B3291E81C300E8810F /* ResultViewController.swift in Sources */,
+				68D4878D291A682A00E8810F /* QuestionsViewController.swift in Sources */,
 				68D4879D291A745600E8810F /* Question.swift in Sources */,
 				68D48789291A682A00E8810F /* AppDelegate.swift in Sources */,
 				68D4878B291A682A00E8810F /* SceneDelegate.swift in Sources */,
@@ -333,7 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CR5V3C9CD8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Which animal are you?/Info.plist";
+				INFOPLIST_FILE = "Which animal are you?/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -364,7 +368,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = CR5V3C9CD8;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Which animal are you?/Info.plist";
+				INFOPLIST_FILE = "Which animal are you?/App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
