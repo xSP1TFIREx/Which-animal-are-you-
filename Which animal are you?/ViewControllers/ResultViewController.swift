@@ -10,6 +10,8 @@ class ResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.navigationItem.setHidesBackButton(true, animated: true)
         
         animalIconLabel.text = animalIcon
         resultDescriptionLabel.text = resultText

@@ -36,6 +36,7 @@ enum Animal: Character {
     }
 }
 
+
 extension Question {
     static func getQuestions() -> [Question] {
         [

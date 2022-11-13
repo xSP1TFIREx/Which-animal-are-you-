@@ -282,7 +282,7 @@
                         <outletCollection property="singleButtons" destination="Hch-8W-hzw" collectionClass="NSMutableArray" id="4mW-WD-7up"/>
                         <outletCollection property="singleButtons" destination="GAJ-N2-zfs" collectionClass="NSMutableArray" id="RvD-IM-ZMK"/>
                         <outletCollection property="singleButtons" destination="vLd-mK-OsX" collectionClass="NSMutableArray" id="fW9-jT-Va4"/>
-                        <segue destination="jdj-Ei-zse" kind="show" identifier="showResult" id="rof-YB-4yK"/>
+                        <segue destination="jdj-Ei-zse" kind="show" identifier="showResult" id="9lh-LQ-ZGN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzY-wd-B6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -323,7 +323,7 @@
                             <constraint firstItem="emZ-0J-w9e" firstAttribute="centerY" secondItem="5PU-wd-CT5" secondAttribute="centerY" id="zbb-AV-Tb8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Результат" id="tYy-o8-wmT">
+                    <navigationItem key="navigationItem" title="Результат" id="tYy-o8-wmT" propertyAccessControl="none">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="me2-Qm-2d7">
                             <connections>
                                 <action selector="barButtonPressed:" destination="jdj-Ei-zse" id="OXu-rR-3ZQ"/>

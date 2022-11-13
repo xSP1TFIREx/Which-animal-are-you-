@@ -33,8 +33,10 @@ class QuestionsViewController: UIViewController {
     private var questionIndex = 0
     private var currentAnswers: [Answer] { questions[questionIndex].answers }
     private var answersChosen: [Answer] = []
-    private var resultDescriptionAnswersCollection: [String] = [""]
-    private var resultEmojiAnswersCollection: [String] = [""]
+    private var resultAnimalAnswers: [Character] = []
+
+
+
     
     
     
@@ -71,7 +73,6 @@ class QuestionsViewController: UIViewController {
         let index = lrintf(rangedSlider.value)
         answersChosen.append(currentAnswers[index])
         
-        getCalculatedDataForResult()
         goToNextQuestion()
     }
 }
@@ -142,25 +143,42 @@ extension QuestionsViewController {
         
     }
     
-//    MARK: - Test functions
-    
-    func getAnimalTitle() -> String {
-        return resultDescriptionAnswersCollection.max()!
-    }
-    
-    func getAnimalEmoji() -> String {
-        return resultEmojiAnswersCollection.max()!
-    }
-    
-    func getCalculatedDataForResult() {
+//    MARK: - Functions for calculations text for answer screeen
+        
+//    Функция для получения смайлика и его описания
+    func getCalculatedDataForResult() -> (description: String, emoji: Character){
         
         for title in answersChosen {
-            resultDescriptionAnswersCollection.append(title.animal.definition)
-            print(title.animal.definition)
-            resultEmojiAnswersCollection.append(String(title.animal.rawValue))
-            print(title.animal.rawValue)
+            switch title.animal{
+            case .dog: resultAnimalAnswers.append(Animal.dog.rawValue)
+            case .cat: resultAnimalAnswers.append(Animal.cat.rawValue)
+            case .rabbit: resultAnimalAnswers.append(Animal.rabbit.rawValue)
+                case .turtle: resultAnimalAnswers.append(Animal.turtle.rawValue)}
         }
+        
+//        Функция, которая сортирует массив смайликов и оставляет там только самый часто встречаемый
+        let mostFrequent = Dictionary(grouping: resultAnimalAnswers, by: {$0})
+            .max(by: {$0.value.count < $1.value.count})?.value ?? []
+        
+//        Присваиваем переменной значение массива
+        let test5 = mostFrequent[0]
+        
+//        Проверяем её значение
+        switch test5 {
+        case Character("🐶"):
+            return (Animal.dog.definition, Animal.dog.rawValue)
+        case Character("🐱"):
+            return (Animal.cat.definition, Animal.cat.rawValue)
+        case Character("🐰"):
+            return (Animal.rabbit.definition, Animal.rabbit.rawValue)
+        case Character("🐢"):
+            return (Animal.turtle.definition, Animal.turtle.rawValue)
+        default:
+            return ("", "a")
+        }
+
     }
+    
 }
 
 //MARK: - Extension for navigation
@@ -179,8 +197,8 @@ extension QuestionsViewController {
 //    Подготовка данных для переноса
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let resultVC = segue.destination as? ResultViewController else {return}
-        resultVC.animalIcon = getAnimalEmoji()
-        resultVC.resultText = getAnimalTitle()
+        resultVC.animalIcon = "Вы - \(getCalculatedDataForResult().emoji)"
+        resultVC.resultText = getCalculatedDataForResult().description
     }
     
 }
