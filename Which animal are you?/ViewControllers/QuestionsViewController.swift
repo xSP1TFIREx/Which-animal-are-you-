@@ -33,13 +33,18 @@ class QuestionsViewController: UIViewController {
     private var questionIndex = 0
     private var currentAnswers: [Answer] { questions[questionIndex].answers }
     private var answersChosen: [Answer] = []
+    private var resultDescriptionAnswersCollection: [String] = [""]
+    private var resultEmojiAnswersCollection: [String] = [""]
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         updateUI()
-     
+        
     }
+
 
     
 //    MARK: - IBActions
@@ -47,6 +52,7 @@ class QuestionsViewController: UIViewController {
         guard let buttonIndex = singleButtons.firstIndex(of: sender) else {return}
         let currentAnswer = currentAnswers[buttonIndex]
         answersChosen.append(currentAnswer)
+
         goToNextQuestion()
     }
     
@@ -56,13 +62,17 @@ class QuestionsViewController: UIViewController {
                 answersChosen.append(answer)
             }
         }
+
         goToNextQuestion()
     }
     
     
     @IBAction func rangedAnswerButtonPressed() {
-        let index = rangedSlider.value
-//        1.54
+        let index = lrintf(rangedSlider.value)
+        answersChosen.append(currentAnswers[index])
+        
+        getCalculatedDataForResult()
+        goToNextQuestion()
     }
 }
 
@@ -72,7 +82,7 @@ extension QuestionsViewController {
     private func updateUI() {
         
         //    Скрыть стеки
-        for stackView in [buttonStack, switchStack, rangedStack] {
+        for stackView in [switchStack, rangedStack, buttonStack] {
             stackView?.isHidden = true
         }
         
@@ -96,7 +106,7 @@ extension QuestionsViewController {
         
     }
     
-    //    Функция для отображения текущих ответов
+        //    Функция для отображения текущих ответов
     private func showCurrentAnswers(for type: ResponseType) {
         switch type {
         case .single: showSingleStack(with: currentAnswers)
@@ -105,7 +115,7 @@ extension QuestionsViewController {
         }
     }
     
-    //    Функция для отображения стека с кнопками на экране
+        //    Функция для отображения стека с кнопками на экране
     private func showSingleStack(with answers: [Answer]) {
         buttonStack.isHidden = false
         
@@ -131,6 +141,26 @@ extension QuestionsViewController {
         rangedLabels.last?.text = answers.last?.title
         
     }
+    
+//    MARK: - Test functions
+    
+    func getAnimalTitle() -> String {
+        return resultDescriptionAnswersCollection.max()!
+    }
+    
+    func getAnimalEmoji() -> String {
+        return resultEmojiAnswersCollection.max()!
+    }
+    
+    func getCalculatedDataForResult() {
+        
+        for title in answersChosen {
+            resultDescriptionAnswersCollection.append(title.animal.definition)
+            print(title.animal.definition)
+            resultEmojiAnswersCollection.append(String(title.animal.rawValue))
+            print(title.animal.rawValue)
+        }
+    }
 }
 
 //MARK: - Extension for navigation
@@ -146,5 +176,11 @@ extension QuestionsViewController {
         performSegue(withIdentifier: "showResult", sender: nil)
     }
 
+//    Подготовка данных для переноса
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let resultVC = segue.destination as? ResultViewController else {return}
+        resultVC.animalIcon = getAnimalEmoji()
+        resultVC.resultText = getAnimalTitle()
+    }
     
 }

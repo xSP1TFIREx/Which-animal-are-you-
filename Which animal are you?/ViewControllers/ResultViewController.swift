@@ -2,8 +2,17 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var animalIconLabel: UILabel!
+    @IBOutlet weak var resultDescriptionLabel: UILabel!
+    
+    var animalIcon = ""
+    var resultText = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animalIconLabel.text = animalIcon
+        resultDescriptionLabel.text = resultText
 
     }
     

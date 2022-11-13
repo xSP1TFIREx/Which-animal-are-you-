@@ -31,7 +31,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Начать опрос"/>
                                         <connections>
-                                            <segue destination="IGg-cZ-KaH" kind="presentation" identifier="goToQuestionScreen" modalPresentationStyle="fullScreen" id="oam-bG-WR7"/>
+                                            <segue destination="IGg-cZ-KaH" kind="presentation" modalPresentationStyle="fullScreen" id="bo3-YY-k18"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -259,32 +259,15 @@
                             <constraint firstItem="6bx-cM-qXs" firstAttribute="leading" secondItem="VEV-AX-NVa" secondAttribute="leading" constant="16" id="pEp-sH-BAf"/>
                             <constraint firstItem="VEV-AX-NVa" firstAttribute="trailing" secondItem="uke-QC-3jX" secondAttribute="trailing" constant="16" id="qbb-ww-ZbR"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="6bx-cM-qXs"/>
-                                <exclude reference="ST4-2P-45h"/>
-                                <exclude reference="uke-QC-3jX"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Вопрос №" id="Gtj-ks-b5I">
-                        <barButtonItem key="rightBarButtonItem" title="=&gt; 3" id="qM2-BC-0YN">
-                            <connections>
-                                <segue destination="jdj-Ei-zse" kind="show" id="TCb-Bn-VAh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Вопрос №" id="Gtj-ks-b5I"/>
                     <connections>
-                        <outlet property="buttonStack" destination="ST4-2P-45h" id="I8c-s1-0Hi"/>
+                        <outlet property="buttonStack" destination="ST4-2P-45h" id="mKM-WG-RvK"/>
                         <outlet property="questionLabel" destination="IGS-ij-3bU" id="5cP-yG-aK8"/>
                         <outlet property="questionProgressView" destination="ei9-7X-FEA" id="Frn-Ha-FLa"/>
                         <outlet property="rangedSlider" destination="9E1-NN-5e7" id="yf6-QJ-ViL"/>
-                        <outlet property="rangedStack" destination="uke-QC-3jX" id="y0q-xS-FcF"/>
-                        <outlet property="switchStack" destination="6bx-cM-qXs" id="YlP-1s-Fxo"/>
-                        <outletCollection property="singleButtons" destination="8DY-pE-a4Y" collectionClass="NSMutableArray" id="md8-hW-aLB"/>
-                        <outletCollection property="singleButtons" destination="Hch-8W-hzw" collectionClass="NSMutableArray" id="7H8-OJ-8uK"/>
-                        <outletCollection property="singleButtons" destination="GAJ-N2-zfs" collectionClass="NSMutableArray" id="9lG-EL-m5t"/>
-                        <outletCollection property="singleButtons" destination="vLd-mK-OsX" collectionClass="NSMutableArray" id="o1t-4b-MfA"/>
+                        <outlet property="rangedStack" destination="uke-QC-3jX" id="nxT-dG-8wO"/>
+                        <outlet property="switchStack" destination="6bx-cM-qXs" id="v5s-a7-wGZ"/>
                         <outletCollection property="multipleLabels" destination="CCf-UL-QzE" collectionClass="NSMutableArray" id="cpi-1E-4ZJ"/>
                         <outletCollection property="multipleLabels" destination="Jph-u3-fIG" collectionClass="NSMutableArray" id="VHh-2a-ein"/>
                         <outletCollection property="multipleLabels" destination="hGd-XL-QUj" collectionClass="NSMutableArray" id="Eie-vq-TMf"/>
@@ -295,6 +278,10 @@
                         <outletCollection property="multipleSwitches" destination="hy5-17-SXR" collectionClass="NSMutableArray" id="tMb-tA-25S"/>
                         <outletCollection property="rangedLabels" destination="Mfd-kA-W5n" collectionClass="NSMutableArray" id="i3P-Cn-Z7Y"/>
                         <outletCollection property="rangedLabels" destination="ia8-jJ-Enr" collectionClass="NSMutableArray" id="YCe-pJ-dKU"/>
+                        <outletCollection property="singleButtons" destination="8DY-pE-a4Y" collectionClass="NSMutableArray" id="5CX-gr-l6O"/>
+                        <outletCollection property="singleButtons" destination="Hch-8W-hzw" collectionClass="NSMutableArray" id="4mW-WD-7up"/>
+                        <outletCollection property="singleButtons" destination="GAJ-N2-zfs" collectionClass="NSMutableArray" id="RvD-IM-ZMK"/>
+                        <outletCollection property="singleButtons" destination="vLd-mK-OsX" collectionClass="NSMutableArray" id="fW9-jT-Va4"/>
                         <segue destination="jdj-Ei-zse" kind="show" identifier="showResult" id="rof-YB-4yK"/>
                     </connections>
                 </viewController>
@@ -343,6 +330,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="animalIconLabel" destination="qWH-dZ-RBh" id="OaH-VF-yJw"/>
+                        <outlet property="resultDescriptionLabel" destination="a5O-G1-6V6" id="bKf-ZF-Niv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVr-oV-1wL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -367,9 +358,6 @@
             <point key="canvasLocation" x="961" y="-29"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="rof-YB-4yK"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
